@@ -57,3 +57,18 @@ output "oidc_provider_arn" {
   value = aws_iam_openid_connect_provider.eks.arn
 
 }
+
+# phase 7: output of node group name and node group arn
+
+output "node_group_name" {
+
+  value = aws_eks_node_group.workers.node_group_name
+
+}
+
+output "node_group_arn" {
+
+  value = aws_eks_node_group.workers.arn
+
+}
+
