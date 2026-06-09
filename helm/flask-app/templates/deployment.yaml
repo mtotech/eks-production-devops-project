@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 
 metadata:
-  name: flask-app
+  name: flask-{{ .Values.deployment.color }}
   namespace: production
 
 spec:
@@ -19,6 +19,7 @@ spec:
 
       labels:
         app: flask-app
+        version: {{ .Values.deployment.color }}
 
     spec:
 

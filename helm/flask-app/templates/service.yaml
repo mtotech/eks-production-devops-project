@@ -9,6 +9,7 @@ spec:
 
   selector:
     app: flask-app
+    version: blue
 
   ports:
 

@@ -34,3 +34,6 @@ config:
 secret:
   username: admin
   password: password123
+
+deployment:
+  color: blue

@@ -1,0 +1,6 @@
+deployment:
+  color: green
+
+image:
+  repository: chauhanneru877/flask-eks-app
+  tag: v1
