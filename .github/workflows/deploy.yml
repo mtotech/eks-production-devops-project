@@ -43,6 +43,12 @@ jobs:
       - name: Run Unit Tests
         run: |
           pytest tests -v 
+      
+      - name: SonarQube Scan
+        uses: SonarSource/sonarqube-scan-action@master
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: http://3.110.37.114:9000
 
       - name: Trivy Filesystem Scan
 
