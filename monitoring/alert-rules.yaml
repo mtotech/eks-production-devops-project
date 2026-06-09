@@ -1,0 +1,33 @@
+apiVersion: monitoring.coreos.com/v1
+
+kind: PrometheusRule
+
+metadata:
+
+  name: flask-alerts
+
+  namespace: monitoring
+
+spec:
+
+  groups:
+
+  - name: flask-alerts
+
+    rules:
+
+    - alert: PodDown
+
+      expr: up == 0
+
+      for: 1m
+
+      labels:
+
+        severity: critical
+
+      annotations:
+
+        summary: Pod is down
+
+        description: Application pod is unavailable
