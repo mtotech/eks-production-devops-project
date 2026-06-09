@@ -1,0 +1,36 @@
+replicaCount: 2
+
+image:
+  repository: chauhanneru877/flask-eks-app
+  tag: v1
+  pullPolicy: Always
+
+service:
+  type: ClusterIP
+  port: 5000
+
+ingress:
+  enabled: true
+  className: alb
+
+resources:
+  requests:
+    cpu: 200m
+    memory: 256Mi
+
+  limits:
+    cpu: 500m
+    memory: 512Mi
+
+hpa:
+  minReplicas: 2
+  maxReplicas: 5
+  targetCPUUtilizationPercentage: 70
+
+config:
+  APP_ENV: production
+  LOG_LEVEL: INFO
+
+secret:
+  username: admin
+  password: password123
