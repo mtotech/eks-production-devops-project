@@ -172,10 +172,31 @@ Identity used by Pods to access Kubernetes APIs.
 
 ## Screenshots
 
-* namespace.png
-* serviceaccount.png
-* rbac.png
-* configmap.png
-* secret.png
-* networkpolicy.png
+## Namespace
+
+![](screenshots/namespace.png)
+
+## Service Account
+
+![](screenshots/serviceaccount.png)
+
+## RBAC
+
+![](screenshots/rbac.png)
+
+## ConfigMap
+
+![](screenshots/configmap.png)
+
+## Secret
+
+![](screenshots/secret.png)
+
+## Resource Quota
+
+![](screenshots/resourcequota.png)
+
+## Network Policy
+
+![](screenshots/networkpolicy.png)
 
