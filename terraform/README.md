@@ -27,15 +27,25 @@ Terraform provisions:
 Architecture Flow:
 
 Internet
+
 ↓
+
 Internet Gateway
+
 ↓
+
 Public Subnets
+
 ↓
+
 NAT Gateway
+
 ↓
+
 Private Subnets
+
 ↓
+
 EKS Worker Nodes
 
 ---
