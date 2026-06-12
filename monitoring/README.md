@@ -555,39 +555,31 @@ Provides Kubernetes object metrics such as:
 
 # Screenshots
 
-## Monitoring Stack
+## Prometheus Installation
 
-* monitoring-pods.png
-* prometheus-running.png
-* grafana-running.png
+![](screenshots/prometheus-install.png)
 
-## Grafana Dashboards
+## AlertManager
 
-* grafana-cluster-dashboard.png
-* grafana-node-dashboard.png
-* grafana-pod-dashboard.png
+![](screenshots/alertmanager.png)
 
-## Prometheus
+## ServiceMonitor
 
-* prometheus-targets.png
-* prometheus-servicemonitor.png
-* prometheus-rules.png
+![](screenshots/servicemonitor.png)
 
-## Metrics
+## Flask Metrics
 
-* kubectl-top-nodes.png
-* kubectl-top-pods.png
+![](screenshots/flask-metrics.png)
 
-## Alerting
+## Kubernetes Dashboard
 
-* alertmanager-dashboard.png
-* active-alerts.png
+![](screenshots/Kubernetes Cluster Dashboard.png)
 
-## Validation
+## Node Exporter Dashboard
 
-* servicemonitor-validation.png
-* monitoring-stack-validation.png
+![](screenshots/node exporter dashboard.png)
 
-```
-```
+## Pod Dashboard
+
+![](screenshots/Kubernetes Pods Dashboard1.png)
 
