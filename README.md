@@ -538,6 +538,7 @@ aws s3 rb s3://<neeraj-devops-terraform-state> --force
 aws dynamodb delete-table \
   --table-name terraform-lock
 
+## screenshots
 
 ### Terraform Backend
 
