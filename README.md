@@ -539,6 +539,11 @@ aws dynamodb delete-table \
   --table-name terraform-lock
 
 
+## Terraform Backend
+
+![](screenshots/terraform-backend-s3-bucket.png)
+
+
 ## Author
 
 Neeraj Kumar
