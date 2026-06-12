@@ -51,8 +51,30 @@ Amazon EKS
 
 Push to Main Branch
 
-```yaml
+
 on:
   push:
     branches:
       - main
+
+
+
+## GitHub Actions
+
+![](screenshots/github-actions.png)
+
+## Trivy Scan
+
+![](screenshots/trivy-scan.png)
+
+## Docker Push
+
+![](screenshots/docker-push.png)
+
+## Helm Upgrade
+
+![](screenshots/helm-upgrade.png)
+
+## Successful Deployment
+
+![](screenshots/successful-deployment.png)
