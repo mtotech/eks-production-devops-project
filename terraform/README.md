@@ -231,9 +231,4 @@ for_each uses keys and values.
 
 ## Screenshots
 
-* terraform-init.png
-* terraform-apply.png
-* vpc-architecture.png
-* eks-cluster.png
-* nodegroup.png
-* oidc-provider.png
+![](screenshots/terraform-init.png)
