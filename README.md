@@ -60,6 +60,74 @@ Prometheus
 
 Grafana
 
+## Directory Structure
+
+
+```text
+eks-production-devops-project/
+│
+├── app/
+│   ├── app.py
+│   ├── requirements.txt
+│   ├── Dockerfile
+│   └── __init__.py
+│
+├── tests/
+│   └── test_app.py
+│
+├── terraform/
+│   ├── backend.tf
+│   ├── provider.tf
+│   ├── variables.tf
+│   ├── locals.tf
+│   ├── vpc.tf
+│   ├── subnets.tf
+│   ├── igw.tf
+│   ├── nat.tf
+│   ├── route-tables.tf
+│   ├── security-groups.tf
+│   ├── iam-cluster.tf
+│   ├── iam-nodegroup.tf
+│   ├── eks-cluster.tf
+│   ├── nodegroup.tf
+│   └── outputs.tf
+│
+├── kubernetes/
+│   └── base/
+│       ├── namespace.yaml
+│       ├── deployment.yaml
+│       ├── service.yaml
+│       ├── ingress.yaml
+│       └── kustomization.yaml
+│
+├── helm/
+│   └── flask-app/
+│       ├── Chart.yaml
+│       ├── values.yaml
+│       └── templates/
+│           ├── deployment.yaml
+│           ├── service.yaml
+│           ├── ingress.yaml
+│           ├── hpa.yaml
+│           └── _helpers.tpl
+│
+├── monitoring/
+│   ├── prometheus/
+│   ├── grafana/
+│   └── alertmanager/
+│
+├── .github/
+│   └── workflows/
+│       └── deploy.yml
+│
+├── sonar-project.properties
+├── pytest.ini
+├── .gitignore
+└── README.md
+```
+
+
+
 ## Features
 
 - Multi-AZ EKS Cluster
