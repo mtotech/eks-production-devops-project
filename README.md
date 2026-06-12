@@ -580,10 +580,13 @@ aws dynamodb delete-table \
 
 ![](screenshots/blue-deployment.png)
 
+ ## Author
+### Neeraj Kumar
 
-## Author
+### DevOps | Cloud | AWS | Terraform | Ansible | Docker | Kubernetes
+### GitHub: https://github.com/mtotech
+### LinkedIn: www.linkedin.com/in/neeraj-kumar-iaf
 
-Neeraj Kumar
 
 
 
