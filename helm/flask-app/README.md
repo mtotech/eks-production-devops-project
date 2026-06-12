@@ -167,9 +167,23 @@ Configuration file for Helm templates.
 
 ## Screenshots
 
-* helm-install.png
-* deployment.png
-* ingress.png
-* hpa.png
-* alb-access.png
+## Helm Lint
+
+![](screenshots/helm-lint.png)
+
+## Helm Install
+
+![](screenshots/helm-install.png)
+
+## Application Resources
+
+![](screenshots/kubectl-get-all.png)
+
+## HPA
+
+![](screenshots/hpa.png)
+
+## Ingress
+
+![](screenshots/ingress.png)
 
