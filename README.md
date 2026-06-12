@@ -539,9 +539,45 @@ aws dynamodb delete-table \
   --table-name terraform-lock
 
 
-## Terraform Backend
+### Terraform Backend
 
 ![](screenshots/terraform-backend-s3-bucket.png)
+
+### VPC Infrastructure
+
+![](screenshots/vpc.png)
+
+### Amazon EKS Cluster
+
+![](screenshots/eks-cluster.png)
+
+### Worker Nodes
+
+![](screenshots/kubectl-get-nodes.png)
+
+### Helm Deployment
+
+![](screenshots/kubectl-get-all.png)
+
+### Monitoring
+
+![](screenshots/prometheus-install.png)
+
+### CI/CD Pipeline
+
+![](screenshots/github-actions.png)
+
+### AWS Load Balancer
+
+![](screenshots/alb-active.png.png)
+
+### Application Validation
+
+![](screenshots/application-accessible.png.png)
+
+### Blue Green Deployment
+
+![](screenshots/blue-deployment.png)
 
 
 ## Author
