@@ -1,31 +1,30 @@
 # Production-Grade Amazon EKS DevOps Platform
 A complete production-grade DevOps project built using AWS, Terraform, Kubernetes, Helm, GitHub Actions, Prometheus, Grafana, SonarQube, Trivy, and Blue-Green Deployments.
-## Project Architecture
-Developer (VS Code)
+## Architecture Diagram
+Developer
 
 ↓
 
-GitHub
+GitHub Repository
 
 ↓
 
-GitHub Actions
+GitHub Actions CI/CD
 
-↓
-
+├─
 Pytest
 
-↓
-
+├─
 SonarQube
 
-↓
-
+├─
 Trivy
 
-↓
-
+├─
 Docker Build
+
+└─ 
+Docker Push
 
 ↓
 
@@ -35,21 +34,23 @@ Docker Hub
 
 Amazon EKS
 
-↓
-
-Helm
-
-↓
-
+├─ 
 AWS Load Balancer Controller
 
-↓
-
+├─ 
 Ingress
 
-↓
+├─ 
+Helm
 
+├─
 Flask Application
+
+├─ 
+HPA
+
+└─ 
+Blue-Green Deployment
 
 ↓
 
@@ -58,6 +59,28 @@ Prometheus
 ↓
 
 Grafana
+
+## Features
+
+- Multi-AZ EKS Cluster
+- Managed Node Groups
+- Private Subnets
+- NAT Gateway
+- AWS Load Balancer Controller
+- Ingress-Based Routing
+- Horizontal Pod Autoscaler
+- Helm Deployments
+- GitHub Actions CI/CD
+- SonarQube Quality Gates
+- Trivy Security Scanning
+- Prometheus Monitoring
+- Grafana Dashboards
+- Blue-Green Deployment Strategy
+- Helm Rollback
+
+
+
+
 ## Project Phases
 | Phase | Description |
 |---------|------------|
@@ -344,6 +367,114 @@ serviceaccount aws-load-balancer-controller not found
 Fix:
 
 Create IRSA ServiceAccount using eksctl.
+
+## Cleanup & Destroy Infrastructure
+### Step 1: Delete Application Helm Release
+helm uninstall flask-app -n production
+#### Verify:
+helm list -n production
+________________________________________
+### Step 2: Delete Monitoring Stack
+helm uninstall monitoring -n monitoring
+#### Verify:
+kubectl get pods -n monitoring
+#### Expected:
+No resources found
+________________________________________
+### Step 3: Delete AWS Load Balancer Controller
+helm uninstall aws-load-balancer-controller -n kube-system
+#### Verify:
+kubectl get pods -n kube-system | grep aws-load-balancer-controller
+#### Expected:
+No resources found
+________________________________________
+### Step 4: Delete Kubernetes Base Resources
+kubectl delete -f kubernetes/base/
+#### Verify:
+kubectl get ns production
+#### Expected:
+NotFound
+________________________________________
+### Step 5: Verify Load Balancer Deletion
+Check AWS Console:
+
+•	EC2 → Load Balancers
+
+OR
+
+kubectl get ingress -n production
+#### Expected:
+No resources found
+
+Wait until the ALB is deleted before proceeding.
+________________________________________
+#### Step 6: Destroy Terraform Infrastructure
+Go to Terraform directory:
+
+cd terraform
+
+Initialize:
+
+
+terraform init
+
+Review destroy plan:
+
+terraform plan -destroy
+#### Destroy infrastructure:
+terraform destroy
+
+Type:
+
+yes
+
+Terraform will delete:
+
+•	EKS Cluster
+
+•	Node Groups
+
+•	VPC
+
+•	Subnets
+
+•	Route Tables
+
+•	Internet Gateway
+
+•	NAT Gateway
+
+•	Security Groups
+
+•	IAM Resources
+________________________________________
+#### Step 7: Verify Everything Is Deleted
+aws eks list-clusters
+#### Expected:
+{
+  "clusters": []
+}
+
+Check VPCs:
+
+aws ec2 describe-vpcs
+#### Verify your project VPC is gone.
+________________________________________
+### Step 8: Delete Terraform Backend (Optional)
+Only if you no longer need state storage.
+#### Delete state file:
+aws s3 rm s3://<neeraj-devops-terraform-state> --recursive
+#### Delete bucket:
+aws s3 rb s3://<neeraj-devops-terraform-state> --force
+#### Delete lock table:
+aws dynamodb delete-table \
+  --table-name terraform-lock
+
+
+## Author
+
+Neeraj Kumar
+
 
 
 
