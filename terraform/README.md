@@ -231,4 +231,52 @@ for_each uses keys and values.
 
 ## Screenshots
 
+## Terraform Backend
+
 ![](screenshots/terraform-init.png)
+
+![](screenshots/terraform-backend-s3-bucket.png)
+
+
+![](screenshots/s3-bucket-dynamoDB-table.png)
+
+
+![](screenshots/dynamoDB-table.png)
+
+## VPC Infrastructure
+
+![](screenshots/vpc.png)
+
+![](screenshots/private-public-subnets.png)
+
+![](screenshots/route-tables.png)
+
+![](screenshots/igw.png)
+
+![](screenshots/nat-gateway.png)
+
+![](screenshots/apply.png)
+
+## IAM Roles
+
+![](screenshots/eks-cluster-role.png)
+
+![](screenshots/node-role.png)
+
+![](screenshots/policy-attachments.png)
+
+## EKS Cluster
+
+![](screenshots/eks-cluster.png)
+
+![](screenshots/cluster-logging.png)
+
+![](screenshots/oidc-provider.png)
+
+## Node Group
+
+![](screenshots/nodegroup-active.png)
+
+![](screenshots/kubectl-get-nodes.png)
+
+![](screenshots/node-labels.png)
